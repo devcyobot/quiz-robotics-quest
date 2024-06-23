@@ -9,7 +9,7 @@ type LogoBadgeProps = {
 const LogoBadge: FC<LogoBadgeProps> = ({ description, src }) => {
   return (
     <div className="flex items-center ml-2 sm:ml-1 md:ml-0 lg:ml-0">
-      <div className="relative flex-shrink-0 h-24 w-24 sm:h-28 sm:w-28 md:h-14 md:w-32">
+      <div className="relative flex-shrink-0 w-32 h-6 lg:h-10">
         <Image
           src={src}
           alt="logo"

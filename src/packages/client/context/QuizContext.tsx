@@ -1,10 +1,10 @@
 "use client";
 import React, { createContext, useContext, useState } from "react";
-import { QuizContextState, QuizProviderProps, UserCredentials } from "./types";
+import { QuizContextType, QuizProviderProps, UserCredentials } from "./types";
 import { request } from "./request";
 
 // Create the context with an initial empty state
-const QuizContext = createContext<QuizContextState | undefined>(undefined);
+const QuizContext = createContext<QuizContextType | undefined>(undefined);
 
 export const QuizProvider: React.FC<QuizProviderProps> = ({
   children,
@@ -24,29 +24,6 @@ export const QuizProvider: React.FC<QuizProviderProps> = ({
   };
 
   const submitQuiz = async (user: UserCredentials) => {
-    try {
-      const response = await fetch("/api/roboticsquest-responses", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email: user.email, response: { answers } }),
-      });
-
-      const parsedResponse = await response.json();
-
-      if (!response.ok) {
-        return { success: false, message: "You already responded to form." };
-      }
-
-      return {
-        success: true,
-        message: "Success",
-      };
-    } catch (error) {
-      console.error("Error submitting quiz", error);
-    }
-
     const result = await request(
       { email: user.email, response: { answers } },
       "/roboticsquest-responses",

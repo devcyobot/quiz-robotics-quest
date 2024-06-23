@@ -70,9 +70,7 @@ const Option: FC<OptionProps> = ({ width, height, text }) => {
           y="50%"
           dominantBaseline="middle"
           textAnchor="middle"
-          className="font-vt323 text-[0.5rem] text-white"
-          textLength={text.length * 2.5}
-          lengthAdjust="spacingAndGlyphs"
+          className="font-vt323 text-[0.32rem] md:text-[0.38rem]"
         >
           {text}
         </text>

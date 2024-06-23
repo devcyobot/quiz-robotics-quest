@@ -30,7 +30,7 @@ const FormButton: FC<FormButtonProps> = ({ label, type, disabled, link }) => {
           ${
             isClicked ? "bg-brand-green" : "bg-brand-white"
           } bg-opacity-90 border border-brand-white 
-          rounded-md lg:rounded-lg py-0 md:py-1 px-2 md:px-5 lg:px-6 mt-1 md:mt-3 lg:mt-5`}
+          rounded-md lg:rounded-lg py-0 md:py-1 px-2 md:px-3 lg:px-4 mt-1 md:mt-3 lg:mt-5`}
         >
           {label}
         </button>
@@ -46,7 +46,7 @@ const FormButton: FC<FormButtonProps> = ({ label, type, disabled, link }) => {
       ${
         isClicked ? "bg-brand-green" : "bg-brand-white"
       } bg-opacity-90 border border-brand-white 
-      rounded-md lg:rounded-lg py-0 md:py-1 px-2 md:px-5 lg:px-6`}
+      rounded-md lg:rounded-lg py-0 md:py-1 px-2 md:px-3 lg:px-4`}
       onClick={handleOnClick}
       onMouseLeave={handleMouseLeave}
       aria-disabled={disabled}

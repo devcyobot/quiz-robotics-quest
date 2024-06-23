@@ -29,6 +29,9 @@ export default {
       boxShadow: {
         "custom-green": "4px 4px 4px #1AD69C",
       },
+      screens: {
+        "max-h-400": { raw: "(max-height: 430px)" },
+      },
     },
   },
   variants: {

@@ -23,13 +23,11 @@ export const request = async (
         console.log("New Errors: ", parsedResponse.errors[0].data[0].message);
         return {
           success: false,
-          //   data: null,
           message: parsedResponse.errors[0].data[0].message,
         };
       }
       return {
         success: false,
-        // data: null,
         message: parsedResponse.errors[0].message,
       };
     }
@@ -37,13 +35,11 @@ export const request = async (
     if (res.ok) {
       return {
         success: true,
-        // data: null,
         message: parsedResponse.message,
       };
     }
 
     return { success: false, message: parsedResponse.message };
-    // throw new Error("Unexpected response format");
   } catch (error) {
     throw new Error(error as string);
   }

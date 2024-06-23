@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
+export type SubmitQuiz = (args: { email: string }) => Promise<SubmitResult>;
 
-// Define the types for the context state and the provider props
-export type QuizContextState = {
+// Define the types for the context type and the provider props
+export type QuizContextType = {
   currentPage: number;
   answers: Record<number, string>; // Keeps track of chosen options
   totalPages: number;
@@ -15,10 +16,6 @@ export type QuizProviderProps = {
   totalPages: number;
 };
 
-export type SubmitQuiz = (
-  args: UserCredentials
-) => Promise<{ success: boolean; message: string }>;
-
 export type UserCredentials = {
   email: string;
   response?: {
@@ -28,6 +25,5 @@ export type UserCredentials = {
 
 export type SubmitResult = {
   success: boolean;
-  //   data: AppUser | null;
   message: string;
 };

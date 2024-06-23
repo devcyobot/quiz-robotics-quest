@@ -1,6 +1,6 @@
 export const QuizData = [
   {
-    desc: "Question 1 dgjflhgkfdjghdfhgodfgdfkjvnkdjfbvdjbvkjdlfgbdfubgvfdkjlvb cklj hgbfdbg kfdbgklfbkvlfdb nfdgfdgkbfdkljgf djkgbdfskjlbgfjldgbfldgbfdjlkfjgklfbdgkdfhgfklgsbfdjlghfdg flhbvdfngfdhnkjdfgbkfjdlgbfdkjglfsdkjgblkfjdhgdfkjlghfdklgnfkljdghfdkjgbkl bkbgkldffgfd ksjgfdlkghfdkghfdlkghflkghfkj",
+    desc: "Question 1 dgjflhgkfdjghdfhgodfgd fkjvnkdjfbv djbvkjdlfgbdfubgvfdkjlvb cklj hgbfdbg kfdbgklfbkvlfdb nfdgfdgkbfdkljgf djkgbdfskjl bgfjldgbfldgb fdjlkfjgklfbdgk dfhgfklgsbfdjlghfdg flhbvdfngfdhnkjdfgbkfjdl gbfdkjglfsdkjgblkfjdhgdfk jlghfdklgnfkljdghfdkjgbkl bkbgkldffgfd ksjgfdlkghfdkghfdlkghflkghfkj",
     options: [
       "Answer 1 super longggggggggggggggg longgggggggg",
       "Answer 2",
