@@ -18,7 +18,7 @@ export type QuizProviderProps = {
 
 export type UserCredentials = {
   email: string;
-  response?: {
+  formResponse?: {
     answers: Record<number, string>;
   };
 };

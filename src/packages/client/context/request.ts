@@ -1,20 +1,21 @@
 import { SubmitResult, UserCredentials } from "./types";
 
 export const request = async (
-  user: UserCredentials | null,
-  endPoint = "",
+  body: UserCredentials | null,
+  endPoint: string,
   method: string
 ): Promise<SubmitResult> => {
   try {
     let res;
-    res = await fetch(`/api/${endPoint}`, {
-      method: `${method}`,
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    });
+    res = await fetch(
+      `${process.env.NEXT_PUBLIC_DASHBOARD_URL}/api/${endPoint}`,
+      {
+        method,
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      }
+    );
 
     const parsedResponse = await res.json();
 
@@ -41,6 +42,7 @@ export const request = async (
 
     return { success: false, message: parsedResponse.message };
   } catch (error) {
+    console.error(error);
     throw new Error(error as string);
   }
 };

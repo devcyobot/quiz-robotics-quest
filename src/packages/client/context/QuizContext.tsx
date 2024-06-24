@@ -25,8 +25,8 @@ export const QuizProvider: React.FC<QuizProviderProps> = ({
 
   const submitQuiz = async (user: UserCredentials) => {
     const result = await request(
-      { email: user.email, response: { answers } },
-      "/roboticsquest-responses",
+      { email: user.email, formResponse: { answers } },
+      `robotics-quest-quiz-responses`,
       "POST"
     );
 
