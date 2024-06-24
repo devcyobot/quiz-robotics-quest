@@ -10,16 +10,29 @@ const Question: FC<QuestionProps> = ({ description, options }) => {
 
   useEffect(() => {
     const updateDimensions = () => {
-      if (window.matchMedia("(max-width: 640px)").matches) {
-        setDimensions({ width: 100, height: 20 });
-      } else if (window.matchMedia("(max-width: 768px)").matches) {
+      // 2xl
+      if (window.matchMedia("(min-width: 1536px)").matches) {
         setDimensions({ width: 130, height: 20 });
-      } else if (window.matchMedia("(max-width: 1024px)").matches) {
+      }
+      // xl
+      else if (window.matchMedia("(min-width: 1280px)").matches) {
         setDimensions({ width: 120, height: 20 });
-      } else if (window.matchMedia("(max-width: 1280px)").matches) {
-        setDimensions({ width: 95, height: 20 });
-      } else {
-        setDimensions({ width: 120, height: 20 }); // Default dimensions
+      }
+      // lg
+      else if (window.matchMedia("(min-width: 1024px)").matches) {
+        setDimensions({ width: 85, height: 20 });
+      }
+      // md
+      else if (window.matchMedia("(min-width: 768px)").matches) {
+        setDimensions({ width: 130, height: 15 });
+      }
+      // sm
+      else if (window.matchMedia("(min-width: 640px)").matches) {
+        setDimensions({ width: 130, height: 15 });
+      }
+      // mobile
+      else {
+        setDimensions({ width: 120, height: 20 }); // Default dimensions for mobile
       }
     };
 
@@ -33,7 +46,7 @@ const Question: FC<QuestionProps> = ({ description, options }) => {
 
   return (
     <section className="h-full w-[90%] flex flex-col place-content-center m-auto">
-      <h2 className="font-vt323 text-white text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-center h-1/2 w-full py-10">
+      <h2 className="font-vt323 flex items-center justify-center text-white text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl h-1/2 w-full py-10">
         {description}
       </h2>
       <ul className="h-1/2 w-full grid grid-cols-1 lg:grid-cols-2 grid-rows-4 lg:grid-rows-2">
