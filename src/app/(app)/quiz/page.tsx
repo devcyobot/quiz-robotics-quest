@@ -20,10 +20,11 @@ const Quiz: FC = () => {
 
   return (
     <main className="container h-screen m-auto p-5 flex flex-col items-center">
-      <div className="flex justify-between w-full">
+      <div className="w-full">
+        <p className="sr-only">CYOBot Company</p>
         <LogoBadge description={"Robotics Quest"} src={logoSrc.src} />
       </div>
-      <div className="flex flex-col items-center m-auto sm:m-0">
+      <div className="h-auto flex flex-col items-center justify-between m-auto sm:m-0">
         <h1 className="font-vt323 text-brand-green text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl flex flex-col text-center">
           QUIZ
           <br />
@@ -32,11 +33,7 @@ const Quiz: FC = () => {
           </span>
         </h1>
         <div className="transform transition-all duration-300 container bg-black bg-opacity-50 h-[34rem] sm:h-[35rem] rounded-xl w-4/5 xl:w-[65rem] 2xl:w-[70rem] justify-self-center">
-          <QuizPagination
-            totalPages={totalPages}
-            onPageChange={handleNext}
-            questions={QuizData}
-          />
+          <QuizPagination questions={QuizData} />
         </div>
       </div>
     </main>

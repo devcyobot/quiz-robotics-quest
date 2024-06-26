@@ -7,9 +7,10 @@ import logoSrc from "../../../packages/client/assets/cyobot-logo.png";
 const CheckEmailPage: FC = () => {
   return (
     <main className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <section className="container bg-brand-purple-dark rounded-xl shadow-lg p-4 w-auto sm:w-2/3 lg:w-1/2 xl:w-1/3 xl:min-w-[673px] max-h-400:h-[90%] h-2/3 sm:h-1/3 md:h-4/5 lg:h-1/2 max-h-[30rem] overflow-autoflex flex-col justify-between transform transition-all duration-300">
+      <section className="container bg-brand-purple-dark rounded-xl shadow-lg p-4 w-auto sm:w-2/3 lg:w-1/2 xl:w-1/3 xl:min-w-[673px] max-h-400:h-[90%] h-[40%] sm:h-1/3 md:h-4/5 lg:h-1/2 max-h-[30rem] overflow-autoflex flex-col justify-between transform transition-all duration-300">
         <div className="h-full flex flex-col justify-evenly">
           <div className="mx-auto">
+            <p className="sr-only">CYOBot Company</p>
             <LogoBadge description={""} src={logoSrc.src} />
           </div>
           <h1 className="text-center text-brand-green text-3xl sm:text-[2rem] md:text-4xl lg:text-[2.5rem] xl:text-5xl font-vt323">
