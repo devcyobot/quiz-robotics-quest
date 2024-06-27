@@ -38,19 +38,19 @@ const Question: FC<QuestionProps> = ({ description, options, index }) => {
       }
       // lg
       else if (window.matchMedia("(min-width: 1024px)").matches) {
-        setDimensions({ width: 85, height: 20 });
+        setDimensions({ width: 70, height: 20 });
       }
       // md
       else if (window.matchMedia("(min-width: 768px)").matches) {
-        setDimensions({ width: 130, height: 15 });
+        setDimensions({ width: 220, height: 25 });
       }
       // sm
       else if (window.matchMedia("(min-width: 640px)").matches) {
-        setDimensions({ width: 130, height: 15 });
+        setDimensions({ width: 200, height: 25 });
       }
       // mobile
       else {
-        setDimensions({ width: 150, height: 20 }); // Default dimensions for mobile
+        setDimensions({ width: 150, height: 30 }); // Default dimensions for mobile
       }
     };
 
@@ -68,7 +68,7 @@ const Question: FC<QuestionProps> = ({ description, options, index }) => {
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <h2 className="font-vt323 flex items-center justify-center text-white text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl h-auto w-full py-10">
+      <h2 className="font-vt323 flex items-center justify-center text-white text-base sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl h-1/3 w-full">
         <span className="sr-only">
           Question {index} of {totalPages}
         </span>{" "}
