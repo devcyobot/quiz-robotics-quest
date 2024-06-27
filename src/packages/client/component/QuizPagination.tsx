@@ -3,7 +3,7 @@ import Question from "./Question";
 import { useQuiz } from "../context/QuizContext";
 
 interface PaginationProps {
-  questions: { desc: string; options: string[] }[];
+  questions: { desc: string; options: { label: string; value: string }[] }[];
 }
 
 const QuizPagination: React.FC<PaginationProps> = ({ questions }) => {

@@ -5,10 +5,10 @@ type OptionProps = {
   handleOnClick: (text: string) => void;
   width: number;
   height: number;
-  text: string;
+  option: { label: string; value: string };
 };
 
-const Option: FC<OptionProps> = ({ width, height, text, handleOnClick }) => {
+const Option: FC<OptionProps> = ({ width, height, option, handleOnClick }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseOver = () => {
@@ -54,7 +54,7 @@ const Option: FC<OptionProps> = ({ width, height, text, handleOnClick }) => {
   };
 
   const textRef = useRef<SVGTextElement | null>(null);
-  const words = text.split(" ");
+  const words = option.label.split(" ");
   const textWidthRatio = 1.2; // Adjust for text width for a line
   const lineHeight = 1.1; // em (unit)
 
@@ -63,8 +63,7 @@ const Option: FC<OptionProps> = ({ width, height, text, handleOnClick }) => {
     if (!svgText) return;
 
     svgText.innerHTML = ""; // Clear existing content
-
-    const words = text.split(" ");
+    const words = option.label.split(" ");
     let lines = [];
     let currentLine: string[] = [];
     let currentLineWidth = 0;
@@ -113,19 +112,19 @@ const Option: FC<OptionProps> = ({ width, height, text, handleOnClick }) => {
 
       svgText.appendChild(tspan);
     });
-  }, [words, text, width, height]);
+  }, [words, option.label, width, height]);
 
   // The threshold to use the customized text wrapping, minimum to be 50 characters
   // otherwise, use the default text
   let useTextPath = false;
-  if (text.length > 40) useTextPath = true;
+  if (option.label.length > 40) useTextPath = true;
 
   return (
     <li
       className="cursor-pointer w-full h-1/2 list-none"
-      onClick={() => handleOnClick(text)}
+      onClick={() => handleOnClick(option.value)}
     >
-      <span className="sr-only">Option {text}</span>
+      <span className="sr-only">Option {option.label}</span>
       <svg
         onMouseOver={handleMouseOver}
         onMouseLeave={handleMouseLeave}
@@ -147,7 +146,7 @@ const Option: FC<OptionProps> = ({ width, height, text, handleOnClick }) => {
             y="0"
             dominantBaseline="middle"
             textAnchor="middle"
-            aria-label={text}
+            aria-label={option.label}
             className="font-robotoRegular text-[0.41rem] sm:text-[0.355rem] md:text-[0.35rem] lg:text-[0.27rem] xl:text-[0.28rem] 2xl:text-[0.3rem]"
           ></text>
         ) : (
@@ -156,10 +155,10 @@ const Option: FC<OptionProps> = ({ width, height, text, handleOnClick }) => {
             y="50%"
             dominantBaseline="middle"
             textAnchor="middle"
-            aria-label={text}
+            aria-label={option.label}
             className="font-robotoRegular text-[0.41rem] sm:text-[0.355rem] md:text-[0.35rem] lg:text-[0.27rem] xl:text-[0.28rem] 2xl:text-[0.3rem]"
           >
-            {text}
+            {option.label}
           </text>
         )}
       </svg>

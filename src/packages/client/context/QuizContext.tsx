@@ -1,6 +1,6 @@
 "use client";
 import React, { createContext, useContext, useState } from "react";
-import { QuizContextType, QuizProviderProps, UserCredentials } from "./types";
+import { QuizContextType, QuizProviderProps, SubmitRequest } from "./types";
 import { request } from "./request";
 
 // Create the context with an initial empty state
@@ -11,10 +11,13 @@ export const QuizProvider: React.FC<QuizProviderProps> = ({
   totalPages,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [answers, setAnswers] = useState<Record<number, string>>({});
+  const [answers, setAnswers] = useState<Record<string, string[]>>({});
 
   const setAnswer = (questionIndex: number, answer: string) => {
-    setAnswers((prev) => ({ ...prev, [questionIndex]: answer }));
+    setAnswers((prev) => ({
+      ...prev,
+      [`q${questionIndex}`.toLowerCase()]: [answer.toUpperCase()],
+    }));
   };
 
   const handleNext = () => {
@@ -23,13 +26,12 @@ export const QuizProvider: React.FC<QuizProviderProps> = ({
     }
   };
 
-  const submitQuiz = async (user: UserCredentials) => {
+  const submitQuiz = async (user: SubmitRequest) => {
     const result = await request(
       { email: user.email, formResponse: { answers } },
       `robotics-quest-quiz-responses`,
       "POST"
     );
-
     return result;
   };
 
