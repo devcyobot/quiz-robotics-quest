@@ -4,7 +4,7 @@ export type SubmitQuiz = (args: { email: string }) => Promise<SubmitResult>;
 // Define the types for the context type and the provider props
 export type QuizContextType = {
   currentPage: number;
-  answers: Record<number, string>; // Keeps track of chosen options
+  answers: Record<string, string[]>; // Keeps track of chosen options
   totalPages: number;
   setAnswer: (questionIndex: number, answer: string) => void;
   handleNext: () => void;
@@ -16,10 +16,10 @@ export type QuizProviderProps = {
   totalPages: number;
 };
 
-export type UserCredentials = {
+export type SubmitRequest = {
   email: string;
   formResponse?: {
-    answers: Record<number, string>;
+    answers: Record<string, string[]>;
   };
 };
 

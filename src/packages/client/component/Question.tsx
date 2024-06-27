@@ -5,7 +5,7 @@ import { useQuiz } from "../context/QuizContext";
 type QuestionProps = {
   index: number;
   description: string;
-  options: string[];
+  options: { label: string; value: string }[];
 };
 const Question: FC<QuestionProps> = ({ description, options, index }) => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -80,7 +80,7 @@ const Question: FC<QuestionProps> = ({ description, options, index }) => {
             key={i}
             width={dimensions.width}
             height={dimensions.height}
-            text={item}
+            option={item}
             handleOnClick={handleOnClick}
           />
         ))}

@@ -1,7 +1,7 @@
-import { SubmitResult, UserCredentials } from "./types";
+import { SubmitResult, SubmitRequest } from "./types";
 
 export const request = async (
-  body: UserCredentials | null,
+  body: SubmitRequest | null,
   endPoint: string,
   method: string
 ): Promise<SubmitResult> => {
