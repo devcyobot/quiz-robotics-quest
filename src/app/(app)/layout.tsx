@@ -9,8 +9,11 @@ import {
 import "../../packages/client/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Robotics Quest Quiz",
-  description: "Robotics Quest Quiz",
+  title: "Robotics Quest",
+  description: "Robotics Quest",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
