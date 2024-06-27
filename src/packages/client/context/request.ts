@@ -20,13 +20,6 @@ export const request = async (
     const parsedResponse = await res.json();
 
     if (parsedResponse.errors) {
-      if (parsedResponse.errors[0].data) {
-        console.log("New Errors: ", parsedResponse.errors[0].data[0].message);
-        return {
-          success: false,
-          message: parsedResponse.errors[0].data[0].message,
-        };
-      }
       return {
         success: false,
         message: parsedResponse.errors[0].message,
