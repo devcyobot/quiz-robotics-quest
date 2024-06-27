@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={`bg-brand-purple-dark h-full md:h-screen ${vt323.variable} ${roboto.variable} ${robotoCondensed.variable}`}
       >
-        <QuizProvider totalPages={5}>{children}</QuizProvider>
+        <QuizProvider totalPages={10}>{children}</QuizProvider>
       </body>
     </html>
   );
