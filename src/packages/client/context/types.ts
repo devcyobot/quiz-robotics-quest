@@ -1,5 +1,8 @@
 import { ReactNode } from "react";
-export type SubmitQuiz = (args: { email: string }) => Promise<SubmitResult>;
+export type SubmitQuiz = (args: {
+  email: string;
+  displayName: string;
+}) => Promise<SubmitResult>;
 
 // Define the types for the context type and the provider props
 export type QuizContextType = {
@@ -18,6 +21,7 @@ export type QuizProviderProps = {
 
 export type SubmitRequest = {
   email: string;
+  displayName: string;
   formResponse?: {
     answers: Record<string, string[]>;
   };
