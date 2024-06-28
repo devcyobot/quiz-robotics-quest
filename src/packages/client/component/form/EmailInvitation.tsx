@@ -17,6 +17,7 @@ export const formSubmit = async (
 ) => {
   const formObject = {
     email: (formData.get("email") as string) || "",
+    displayName: (formData.get("displayName") as string) || "",
   };
 
   const res = await submit(formObject);
@@ -76,6 +77,14 @@ const EmailInvitaion: FC = () => {
             Enter your email to continue
           </h1>
           <form className="mx-auto w-4/5" onSubmit={handleSubmit}>
+            <label className="text-base sm:text-lg md:text-xl xl:text-2xl text-white font-robotoRegular mt-3 grid grid-cols-[1fr_4fr] sm:grid-cols-[1fr_6fr] items-center">
+              Name
+              <FormInput
+                typeInput="text"
+                name="displayName"
+                placeHolder="Name"
+              />
+            </label>
             <label className="text-base sm:text-lg md:text-xl xl:text-2xl text-white font-robotoRegular mt-3 grid grid-cols-[1fr_4fr] sm:grid-cols-[1fr_6fr] items-center">
               Email
               <FormInput typeInput="email" name="email" placeHolder="Email" />
