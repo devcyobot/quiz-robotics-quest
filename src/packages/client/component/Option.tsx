@@ -11,16 +11,31 @@ type OptionProps = {
 const Option: FC<OptionProps> = ({ width, height, option, handleOnClick }) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  // Function to check if the device is mobile or tablet
+  const isMobileOrTablet = () => {
+    if (typeof window === "undefined") {
+      return false;
+    }
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isTouchScreen =
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    return (
+      /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|windows phone/.test(
+        userAgent
+      ) || isTouchScreen
+    );
+  };
+
   const handleMouseOver = () => {
     // not use hovering effects for mobile screens
-    if (window.matchMedia("(min-width: 640px)").matches) {
+    if (!isMobileOrTablet()) {
       setIsHovered(true);
     }
   };
 
   const handleMouseLeave = () => {
     // not use hovering effects for mobile screens
-    if (window.matchMedia("(min-width: 640px)").matches) {
+    if (!isMobileOrTablet()) {
       setIsHovered(false);
     }
   };
@@ -120,15 +135,17 @@ const Option: FC<OptionProps> = ({ width, height, option, handleOnClick }) => {
   if (option.label.length > 40) useTextPath = true;
 
   return (
-    <li
-      className="cursor-pointer w-full h-1/2 list-none"
-      onClick={() => handleOnClick(option.value)}
-    >
+    <li className="cursor-pointer w-full h-1/2 list-none">
       <span className="sr-only">Option {option.label}</span>
       <svg
+        onClick={() => handleOnClick(option.value)}
         onMouseOver={handleMouseOver}
         onMouseLeave={handleMouseLeave}
-        className="transition-transform duration-300 ease-in-out transform sm:hover:scale-110 sm:hover:-translate-x-2 sm:hover:-translate-y-2"
+        className={
+          isHovered
+            ? "transition-transform duration-300 ease-in-out transform hover:scale-110 hover:-translate-x-2 hover:-translate-y-2"
+            : ""
+        }
         width="100%"
         height="100%"
         viewBox={`0 0 ${width} ${height}`}
