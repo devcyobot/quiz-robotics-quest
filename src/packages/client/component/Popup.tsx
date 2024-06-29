@@ -19,6 +19,8 @@ const Popup: FC<PopupProps> = ({
   link2,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
+  let showButton = false;
+  if (message === "You haven't answered the questions.") showButton = true;
 
   useEffect(() => {
     // Trigger the visibility state after the component has mounted
@@ -52,10 +54,10 @@ const Popup: FC<PopupProps> = ({
           </button>
         </div>
         <div className="h-full flex flex-col justify-evenly">
-          <h2 className="text-base sm:text-lg lg:text-xl xl:text-2xl text-brand-red-dark font-robotoRegular text-center">
+          <h2 className="text-base sm:text-lg lg:text-xl xl:text-2xl text-white font-robotoRegular text-center">
             {message}
           </h2>
-          {label1 && (
+          {showButton && label1 && (
             <div className="w-2/3 flex flex-col self-center gap-y-2 lg:gap-y-0">
               <Button type="button" label={label1} link={link1} />
               {label2 && <Button type="button" label={label2} link={link2} />}

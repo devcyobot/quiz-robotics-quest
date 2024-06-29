@@ -34,7 +34,7 @@ const Question: FC<QuestionProps> = ({ description, options, index }) => {
       }
       // xl
       else if (window.matchMedia("(min-width: 1280px)").matches) {
-        setDimensions({ width: 95, height: 20 });
+        setDimensions({ width: 90, height: 20 });
       }
       // lg
       else if (window.matchMedia("(min-width: 1024px)").matches) {

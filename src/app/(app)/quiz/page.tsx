@@ -8,7 +8,7 @@ import QuizPagination from "../../../packages/client/component/QuizPagination";
 import { QuizData } from "../../../packages/client/data/QuizData";
 
 const Quiz: FC = () => {
-  const { answers, handleNext, totalPages } = useQuiz();
+  const { answers, totalPages } = useQuiz();
   const recordLength = Object.keys(answers).length;
 
   //   Submit the quiz after user has answered all questions
@@ -32,7 +32,7 @@ const Quiz: FC = () => {
             TIME
           </span>
         </h1>
-        <div className="transform transition-all duration-300 container bg-black bg-opacity-50 h-[34rem] sm:h-[35rem] rounded-xl w-4/5 xl:w-[65rem] 2xl:w-[70rem] justify-self-center">
+        <div className="transform transition-all duration-300 container bg-black bg-opacity-50 h-[34rem] sm:h-[37rem] rounded-xl w-4/5 xl:w-[65rem] 2xl:w-[70rem] justify-self-center">
           <QuizPagination questions={QuizData} />
         </div>
       </div>
