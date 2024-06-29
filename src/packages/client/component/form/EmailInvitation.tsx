@@ -77,7 +77,7 @@ const EmailInvitaion: FC = () => {
 
   return (
     <main className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black bg-opacity-50">
-      <section className="container bg-brand-purple-dark rounded-xl shadow-lg w-auto sm:w-[80%] md:w-[75%] lg:w-[60%] xl:w-[55%] xl:min-w-[673px] max-h-400:h-[98%] min-h-[30rem] h-1/2 md:h-[65%] lg:h-[70%] xl:h-[75%] max-h-[45rem] overflow-autoflex flex-col justify-between transform transition-all duration-300">
+      <section className="container bg-brand-purple-dark rounded-xl shadow-lg w-auto sm:w-[80%] md:w-[75%] lg:w-[60%] xl:w-[55%] xl:min-w-[673px] max-w-[45rem] max-h-400:h-[98%] min-h-[30rem] h-1/2 md:h-[65%] lg:h-[70%] xl:h-[75%] max-h-[45rem] overflow-auto flex flex-col justify-between transform transition-all duration-300">
         <div className="h-full flex flex-col justify-evenly">
           <div className="mx-auto h-10">
             <p className="sr-only">CYOBot Company</p>
@@ -167,7 +167,7 @@ const EmailInvitaion: FC = () => {
             <div className="w-1/2 sm:w-1/3 mx-auto">
               <SubmitButton
                 type="submit"
-                label="GET RESULTS"
+                label="GET RESULT"
                 disabled={loading}
               />
             </div>

@@ -164,7 +164,7 @@ const Option: FC<OptionProps> = ({ width, height, option, handleOnClick }) => {
             dominantBaseline="middle"
             textAnchor="middle"
             aria-label={option.label}
-            className="font-robotoRegular text-[0.45rem] sm:text-[0.5rem] md:text-[0.49rem] lg:text-[0.25rem] xl:text-[0.28rem] 2xl:text-[0.3rem]"
+            className="font-robotoRegular text-[0.45rem] sm:text-[0.5rem] md:text-[0.49rem] lg:text-[0.25rem] xl:text-[0.38rem] 2xl:text-[0.3rem]"
           ></text>
         ) : (
           <text
@@ -173,7 +173,7 @@ const Option: FC<OptionProps> = ({ width, height, option, handleOnClick }) => {
             dominantBaseline="middle"
             textAnchor="middle"
             aria-label={option.label}
-            className="font-robotoRegular text-[0.45rem] sm:text-[0.5rem] md:text-[0.49rem] lg:text-[0.25rem] xl:text-[0.28rem] 2xl:text-[0.3rem]"
+            className="font-robotoRegular text-[0.45rem] sm:text-[0.5rem] md:text-[0.49rem] lg:text-[0.25rem] xl:text-[0.38rem] 2xl:text-[0.3rem]"
           >
             {option.label}
           </text>

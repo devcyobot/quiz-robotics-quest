@@ -34,11 +34,11 @@ const Question: FC<QuestionProps> = ({ description, options, index }) => {
       }
       // xl
       else if (window.matchMedia("(min-width: 1280px)").matches) {
-        setDimensions({ width: 90, height: 20 });
+        setDimensions({ width: 120, height: 25 });
       }
       // lg
       else if (window.matchMedia("(min-width: 1024px)").matches) {
-        setDimensions({ width: 70, height: 20 });
+        setDimensions({ width: 80, height: 20 });
       }
       // md
       else if (window.matchMedia("(min-width: 768px)").matches) {
@@ -64,17 +64,17 @@ const Question: FC<QuestionProps> = ({ description, options, index }) => {
 
   return (
     <section
-      className={`h-full w-[90%] flex flex-col place-content-center m-auto transition-opacity duration-200 ease-in-out ${
+      className={`h-full w-[90%] m-auto transition-opacity duration-200 ease-in-out ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <h2 className="font-vt323 flex items-center justify-center text-white text-base sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl h-1/3 w-full">
+      <h2 className="mt-5 font-vt323 flex items-center justify-center text-white text-base sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl h-1/3 w-full">
         <span className="sr-only">
           Question {index} of {totalPages}
         </span>{" "}
         {description}
       </h2>
-      <ul className="h-2/3 w-full grid grid-cols-1 lg:grid-cols-2 grid-rows-4 lg:grid-rows-2">
+      <ul className="mt-5 lg:mt-10 h-2/3 w-full grid grid-cols-1 lg:grid-cols-2 grid-rows-4 lg:grid-rows-2">
         {options.map((item, i) => (
           <Option
             key={i}
