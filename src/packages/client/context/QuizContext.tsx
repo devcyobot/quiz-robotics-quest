@@ -26,11 +26,18 @@ export const QuizProvider: React.FC<QuizProviderProps> = ({
     }
   };
 
+  const handlePrevious = () => {
+    if (0 < currentPage) {
+      setCurrentPage((prev) => prev - 1);
+    }
+  };
+
   const submitQuiz = async (user: SubmitRequest) => {
     const result = await request(
       {
         email: user.email,
         displayName: user.displayName,
+        isMarketingConsent: user.isMarketingConsent,
         formResponse: { answers },
       },
       `robotics-quest-quiz-responses`,
@@ -47,6 +54,7 @@ export const QuizProvider: React.FC<QuizProviderProps> = ({
         totalPages,
         setAnswer,
         handleNext,
+        handlePrevious,
         submitQuiz,
       }}
     >

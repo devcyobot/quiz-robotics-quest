@@ -21,6 +21,8 @@ const CheckEmailPage: FC = () => {
             We have robots!{" "}
             <span className="underline underline-offset-4">
               <Link
+                passHref={true}
+                target="_blank"
                 href="https://cyobot.com/"
                 className="hover:animate-pulse hover:text-brand-green"
               >

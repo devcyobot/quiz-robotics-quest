@@ -5,6 +5,7 @@ export type FormInputProps = {
   typeInput: string;
   placeHolder: string;
   name: string;
+  id: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -18,6 +19,7 @@ const FormInput: FC<FormInputProps> = (props: FormInputProps) => {
   return (
     <div className="relative w-full">
       <input
+        id={props.id}
         type={showPassword ? "text" : props.typeInput}
         name={props.name}
         placeholder={props.placeHolder}
