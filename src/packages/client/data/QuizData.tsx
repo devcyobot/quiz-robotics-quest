@@ -80,7 +80,7 @@ export const QuizData: {
     ],
   },
   {
-    desc: "7. The robot welcomes you to this new dimension and goes on and on about how chaotic this dimension is because there have been no actual human maintaing it. What will you prioritize?",
+    desc: "7. The robot welcomes you to this new dimension and goes on and on about how chaotic this dimension is because there have been no actual human maintaining it. What will you prioritize?",
     options: [
       {
         label:
